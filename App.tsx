@@ -8,17 +8,63 @@ import DiscoverScreen from './screens/DiscoverScreen';
 import HomeScreen from './screens/HomeScreen';
 import InboxScreen from './screens/InboxScreen';
 import ProfileScreen from './screens/ProfileScreen'; 
+import HomeSvg from './icons/HomeSvg';
+import SearchSvg from './icons/SearchSvg';
+import CreateSvg from './icons/CreateSvg';
+import ProfileSvg from './icons/ProfileSvg';
+import InboxSvg from './icons/InboxSvg';
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen}/>
-        <Tab.Screen name="Discover" component={DiscoverScreen}/>
-        <Tab.Screen name="Inbox" component={InboxScreen}/>
-        <Tab.Screen name="Create" component={CreateScreen}/>
-        <Tab.Screen name="Profile" component={ProfileScreen}/>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: '#000000',
+          labelStyle:{
+            fontSize: 10,
+            fontWeight: '600',
+            marginBottom: 5
+          }
+        }
+      }
+      >  
+        <Tab.Screen name="Home" component={HomeScreen}
+          options={{
+            tabBarIcon: ({color, size, focused}) => (
+              <HomeSvg color={color} size={size} focused= {focused}/>
+            ),
+          }}
+        />
+        <Tab.Screen name="Discover" component={DiscoverScreen}
+          options={{
+            tabBarIcon: ({color, size, focused}) => (
+              <SearchSvg color={color} size={size} focused= {focused}/>
+            ),
+          }}
+        />
+        <Tab.Screen name="Create" component={CreateScreen}
+          options={{
+            tabBarIcon: ({color, size, focused}) => (
+              <CreateSvg color={color} size={size} focused= {focused}/>
+            ),
+            tabBarLabel: () => null,
+          }}
+        />
+        <Tab.Screen name="Inbox" component={InboxScreen}
+          options={{
+            tabBarIcon: ({color, size, focused}) => (
+              <InboxSvg color={color} size={size} focused= {focused}/>
+            ),
+          }}
+        />
+        <Tab.Screen name="Me" component={ProfileScreen}
+          options={{
+            tabBarIcon: ({color, size, focused}) => (
+              <ProfileSvg color={color} size={size} focused= {focused}/>
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
