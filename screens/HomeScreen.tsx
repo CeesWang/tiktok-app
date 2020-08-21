@@ -1,11 +1,23 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Text, View} from 'react-native';
-import { Video } from 'expo-av';
+import { Audio, Video } from 'expo-av';
 import { FeedContext } from '../context';
 //view pager 
 const HomeScreen = () => {
     const feed = useContext(FeedContext);
-    console.log(feed);
+
+    useEffect(()=> {
+      Audio.setAudioModeAsync({
+        allowsRecordingIOS: false,
+        staysActiveInBackground: false,
+        interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+        playsInSilentModeIOS: true,
+        shouldDuckAndroid: true,
+        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+        playThroughEarpieceAndroid: false
+      });
+    })
+
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Video
