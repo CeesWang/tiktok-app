@@ -21,6 +21,12 @@ export default function App() {
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: '#000000',
+          style: {
+            backgroundColor:'transparent',
+            borderTopWidth: 0.3,
+            position: 'absolute',
+            elevation: 0 // <-- this is the solution
+          },
           labelStyle:{
             fontSize: 10,
             fontWeight: '600',
