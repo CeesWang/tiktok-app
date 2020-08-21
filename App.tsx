@@ -51,21 +51,21 @@ export default function App() {
           <Tab.Screen name="Home" component={HomeScreen}
             options={{
               tabBarIcon: ({color, size, focused}) => (
-                <HomeSvg color={color} size={size} focused= {focused}/>
+                <HomeSvg color={color} size={size} focused={focused}/>
               ),
             }}
           />
           <Tab.Screen name="Discover" component={DiscoverScreen}
             options={{
               tabBarIcon: ({color, size, focused}) => (
-                <SearchSvg color={color} size={size} focused= {focused}/>
+                <SearchSvg color={color} size={size} focused={focused}/>
               ),
             }}
           />
           <Tab.Screen name="Create" component={CreateScreen}
             options={{
               tabBarIcon: ({color, size, focused}) => (
-                <CreateSvg color={color} size={size} focused= {focused}/>
+                <CreateSvg color={color} size={size} focused={focused}/>
               ),
               tabBarLabel: () => null,
             }}
@@ -73,14 +73,14 @@ export default function App() {
           <Tab.Screen name="Inbox" component={InboxScreen}
             options={{
               tabBarIcon: ({color, size, focused}) => (
-                <InboxSvg color={color} size={size} focused= {focused}/>
+                <InboxSvg color={color} size={size} focused={focused}/>
               ),
             }}
           />
           <Tab.Screen name="Me" component={ProfileScreen}
             options={{
               tabBarIcon: ({color, size, focused}) => (
-                <ProfileSvg color={color} size={size} focused= {focused}/>
+                <ProfileSvg color={color} size={size} active={focused}/>
               ),
             }}
           />

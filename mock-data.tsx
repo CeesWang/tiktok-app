@@ -28,7 +28,7 @@ export const mockData = [   // https://github.com/Marlon-Paulo-da-Silva/TikTok-C
       },
       {
         "id": 4,
-        "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "video_url": "http://techslides.com/demos/sample-videos/small.mp4",
         "aspectRatio": 0.834,
         "description": "3, 2, 1, ready to launch!",
         "likes": 1002,

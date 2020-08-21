@@ -2,7 +2,7 @@ import React from 'react';
 import Svg, { Path} from 'react-native-svg';
 
 const HomeSvg = ({color, focused , size } : {color : string, focused : boolean, size : number}) => {
-  console.log(color, focused, size)
+
   return (
     <Svg fill={"#000000"} 
       viewBox="0 0 50 50" 
