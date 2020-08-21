@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Text, View} from 'react-native';
 import { Video } from 'expo-av';
+import { FeedContext } from '../context';
 //view pager 
 const HomeScreen = () => {
+    const feed = useContext(FeedContext);
+    console.log(feed);
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'green' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Video
-          source={{ uri: 'https://www.youtube.com/watch?v=HDvL73k_M8Y' }}
+          source={{ uri: 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
           rate={1.0}
           volume={1.0}
           isMuted={false}
