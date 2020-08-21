@@ -25,7 +25,6 @@ interface FeedInterface {
   place: string 
 }
 export default function App() {
-  const FeedContext = createContext({});
   const [feed, setFeed] = useState<FeedInterface[]>(mockData);  
   const Tab = createBottomTabNavigator();
 

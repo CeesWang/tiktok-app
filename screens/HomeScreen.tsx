@@ -9,7 +9,7 @@ const HomeScreen = () => {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Video
-          source={{ uri: 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
+          source={{ uri: feed[2].video_url }}
           rate={1.0}
           volume={1.0}
           isMuted={false}
