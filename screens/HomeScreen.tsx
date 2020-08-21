@@ -3,11 +3,12 @@ import {Text, View} from 'react-native';
 import { Audio, Video } from 'expo-av';
 import { FeedContext } from '../context';
 import ViewPager from '@react-native-community/viewpager';
+import { useIsFocused } from '@react-navigation/native';
 //view pager 
 const HomeScreen = () => {
     const feed = useContext(FeedContext);
     const [currentPage, setCurrentPage] = useState(0);
-
+    const isFocused = useIsFocused();
     useEffect(()=> {
       Audio.setAudioModeAsync({
         allowsRecordingIOS: false,
@@ -18,8 +19,8 @@ const HomeScreen = () => {
         interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
         playThroughEarpieceAndroid: false
       });
-    })
-
+    },[])
+    console.log(isFocused);
     return (
       <ViewPager style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}} 
         initialPage={0}

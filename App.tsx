@@ -26,11 +26,13 @@ interface FeedInterface {
 }
 export default function App() {
   const [feed, setFeed] = useState<FeedInterface[]>(mockData);  
+  const [color, setColor] = useState("");
   const Tab = createBottomTabNavigator();
 
   return (
     <FeedContext.Provider value={feed}>
       <NavigationContainer>
+        
         <Tab.Navigator
           tabBarOptions={{
             activeTintColor: '#000000',
@@ -45,8 +47,7 @@ export default function App() {
               fontWeight: '600',
               marginBottom: 5
             }
-          }
-        }
+          }} 
         >  
           <Tab.Screen name="Home" component={HomeScreen}
             options={{
